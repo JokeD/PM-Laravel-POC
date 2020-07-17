@@ -15,8 +15,9 @@ RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
     php7-gettext php7-ldap php7-ctype php7-dom php7-pcntl \
     && ln -s /usr/share/nginx/html/vendor/bin/ppm /usr/bin/ppm \
     && docker-php-ext-install pdo pdo_mysql pcntl \
-    && docker-php-ext-enable xdebug redis pcntl \
-    && apk cache clean
+    && docker-php-ext-enable xdebug redis pcntl
+
+    ## TODO purge apk
 
 WORKDIR /usr/share/nginx/html
 
