@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  extreme_php_dev:
+      build: ./build/php_dev
+      volumes:
+        - ../app:/usr/share/nginx/html
+        - ./config/php/alpine:/usr/local/etc
+      networks:
+        - extreme_php
+      ports:
+      - "6969:8080"
+networks:
+  extreme_php:
