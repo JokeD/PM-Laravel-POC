@@ -17,8 +17,6 @@ RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
     && docker-php-ext-install pdo pdo_mysql pcntl \
     && docker-php-ext-enable xdebug redis pcntl
 
-    ## TODO purge apk
-
 WORKDIR /usr/share/nginx/html
 
 ADD entrypoint.sh /usr/local/bin
