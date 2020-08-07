@@ -52,4 +52,6 @@ $app->singleton(
 |
 */
 
+$app->useAppPath(realpath(__DIR__ . '/../src'));
+
 return $app;
